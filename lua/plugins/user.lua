@@ -1,7 +1,7 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
-
+--
 ---@type LazySpec
 return {
 
@@ -90,38 +90,5 @@ return {
       require("night-owl").setup()
       vim.cmd.colorscheme "night-owl"
     end,
-  },
-
-  -- Configure Copilot integration with Blink.cmp
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true,
-      },
-    },
-  },
-  {
-    "saghen/blink.cmp",
-    optional = true,
-    dependencies = { "fang2hou/blink-copilot" },
-    opts = {
-      sources = {
-        default = { "copilot" },
-        providers = {
-          copilot = {
-            name = "copilot",
-            module = "blink-copilot",
-            score_offset = 100,
-            async = true,
-          },
-        },
-      },
-    },
   },
 }
